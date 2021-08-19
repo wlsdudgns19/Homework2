@@ -79,17 +79,17 @@
 -	우선 웹 부라우저에 URL을 입력하고 Enter.
 -	이후 바로 URL의 주소로 이동, 웹 브라우저가 입력한 URL을 분석하며 일을 시작
 -	URL 분석
-  *	URL구조가 맞으면 사용 중인 웹 브라우저의 검색엔진으로 입력어를 검색한다.
-  *	URL구조가 맞지 않으면 HSTS 목록을 받아와 url내의 주소와 목록의 주소가 일치한다면 https로, 그렇지 않으면 http로 첫 요청을 보낸다.
+  * URL구조가 맞으면 사용 중인 웹 브라우저의 검색엔진으로 입력어를 검색한다.
+  * URL구조가 맞지 않으면 HSTS 목록을 받아와 url내의 주소와 목록의 주소가 일치한다면 https로, 그렇지 않으면 http로 첫 요청을 보낸다.
 -	DNS에 내가 접근하려는 name주소의 IP주소를 요청한다.
-  *	Reculsive server의 cache를 먼저 확인한다. 있으면 그 IP 주소를 리턴한다.
-  *	없을 경우 DNS 시스템에 따라, Root server - TLD server - Authoriative server에 IP주소를 물어본다.
+  * Reculsive server의 cache를 먼저 확인한다. 있으면 그 IP 주소를 리턴한다.
+  * 없을 경우 DNS 시스템에 따라, Root server - TLD server - Authoriative server에 IP주소를 물어본다.
 -	IP주소를 받은 다음, ARP를 통해 실질적으로 내가 접근해야할 IP주소를 할당받은 것의 MAC 주소를 추적한다.
 -	대상과 TCP통신을 통해 Socket을 연다.
 -	HTTPS => TLS과정 추가
 -	HTTP 프로토콜 요청
-  *	Client가 서버에 HTTP 프로토콜을 요청한다.
-  *	HTML에서 참조하는 모든 페이지(Image, css, favicon.ico 등)에 대해 이 과정을 반복한다.
+  * Client가 서버에 HTTP 프로토콜을 요청한다.
+  * HTML에서 참조하는 모든 페이지(Image, css, favicon.ico 등)에 대해 이 과정을 반복한다.
 -	HTTP의 응답
 -	웹 브라우저의 그림 그리기
   *	구문 분석 (HTML, CSS, JS) + 렌더링 (DOM Tree 구성 - 렌더 트리 구성 - 렌더트리 레이아웃 배치 - 렌더트리 그리기)
